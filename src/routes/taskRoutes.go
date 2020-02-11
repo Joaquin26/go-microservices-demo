@@ -8,6 +8,7 @@ import (
 //SetTaskRoutes define task routes
 func SetTaskRoutes(e *echo.Echo) {
 	taskRoutes := e.Group("/task")
-	taskRoutes.GET("/", handlers.GetTask)
+	taskRoutes.GET("/:id", handlers.GetTask)
+	taskRoutes.POST("/", handlers.CreateTask)
 
 }
